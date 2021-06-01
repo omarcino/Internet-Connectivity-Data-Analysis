@@ -5,7 +5,9 @@ When looking at its layout. The point of using Lorem Ipsum is that it has a more
 Create a directory
 
 `$ mkdir directory-name`
+
 `$ cd directory-name`
+
 Inside directory create a virtual environment
 
 #### Download Code
