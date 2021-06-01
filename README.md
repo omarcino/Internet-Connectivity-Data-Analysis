@@ -18,7 +18,7 @@ When looking at its layout. The point of using Lorem Ipsum is that it has a more
 
 
 ### Download Code
-`$ wget https://github.com/omarcino/pings-data-analysis/blob/main/pingv4.sh`
+`$ wget https://raw.githubusercontent.com/omarcino/pings-data-analysis/main/pingv4.sh`
 
 ### Make scripting executable
 `$ chmod a+x pingv4.sh`
