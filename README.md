@@ -15,13 +15,14 @@ When looking at its layout. The point of using Lorem Ipsum is that it has a more
 
 `$ python3 -m venv venv`
 
-`$ source venv/bin/activate` //Activate venv
+`$ source venv/bin/activate` // Activate venv
 
+`(venv) $ deactivate` // To deactivate venv
 
-
-
+#### Install libraries
 
 #### Download Code
+
 #### Make scripting executable
 #### Schedule the code to run everytime linux stars
 #### Verify Script is working
