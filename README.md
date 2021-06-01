@@ -24,6 +24,11 @@ When looking at its layout. The point of using Lorem Ipsum is that it has a more
 `$ chmod a+x pingv4.sh`
 
 ### Edit file with the ip address desired to test
+### Only is allowed ip addresses, not hostnames
+> Example
+>
+> host="8.8.8.8"
+
 
 #### Schedule the code to run everytime linux stars
 #### Verify Script is working
