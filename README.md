@@ -35,6 +35,8 @@ When looking at its layout. The point of using Lorem Ipsum is that it has a more
 > @reboot /pathdirectory/pingv4.sh
 
 #### Verify Script is working
+Example  
+`$ tail 2021-05-31.ipv4-8.8.8.8`
 
 #### Intall python3-venv on Ubuntu
 `$ sudo apt-get install python3-venv`	// Only needed once
