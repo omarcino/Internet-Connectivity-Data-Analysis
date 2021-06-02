@@ -61,7 +61,7 @@ http://localhost:8888/?token=tokeyGivenByLinuxServer
 `from datetime import date`  
 
 ***Import log ping file***  
-Make sure head is: date time size bytes from ip icmp ttl rtt ms
+Make sure head is: date time size bytes from ip icmp ttl rtt ms  
 `pings = pd.read_csv("ping-log-file-name", sep=' ', engine='python')`  
 
 ***Formating datetime and rtt time***  
