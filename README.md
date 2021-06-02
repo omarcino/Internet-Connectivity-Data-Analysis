@@ -15,7 +15,8 @@ When looking at its layout. The point of using Lorem Ipsum is that it has a more
 
 ### Install libraries
 `(venv)$ pip install pandas`  
-`(venv)$ pip install jupyter`  
+`(venv)$ pip install jupyter` 
+`(venv)$ pip install matplotlib`  
 
 ### Download Code
 `$ wget https://raw.githubusercontent.com/omarcino/pings-data-analysis/main/pingv4.sh`
@@ -51,13 +52,13 @@ http://localhost:8888/?token=tokeyGivenByLinuxServer
 
 ### This will be the code 
 ***Import libraries***  
-%matplotlib inline  
-import numpy as np  
-import matplotlib.pyplot as plt  
-import pandas as pd  
-import matplotlib.dates as mdates  
-from matplotlib.dates import DateFormatter  
-from datetime import date  
+`%matplotlib inline`  
+`import numpy as np`  
+`import matplotlib.pyplot as plt`  
+`import pandas as pd`  
+`import matplotlib.dates as mdates`  
+`from matplotlib.dates import DateFormatter`  
+`from datetime import date`  
 
 
 
