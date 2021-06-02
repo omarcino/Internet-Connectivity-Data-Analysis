@@ -3,8 +3,8 @@
 When looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
 
 ### Intall python3-venv
-`$ sudo apt-get install python3-venv`	// On Ubuntu. Only once  
-`# zypper install python3-virtualenv` // On OpenSuse. Only once  
+`$ sudo apt-get install python3-venv`	// On Ubuntu  
+`# zypper install python3-virtualenv` // On OpenSuse  
 
 ### Create the virtual environment
 `$ mkdir directory-name`  
@@ -15,7 +15,7 @@ When looking at its layout. The point of using Lorem Ipsum is that it has a more
 
 ### Install libraries
 `(venv)$ pip install pandas`  
-`(venv)$ pip install jupyter` 
+`(venv)$ pip install jupyter`  
 `(venv)$ pip install matplotlib`  
 
 ### Download Code
