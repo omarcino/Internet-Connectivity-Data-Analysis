@@ -40,7 +40,7 @@ Example
 
 ### Start Jupiter Notebook on Linux
 `(venv)$ jupyter notebook --no-browser --port=8888 --allow-root`  // You will receive a token value  
-> Example
+> Example  
 > http://localhost:8888/?token=dfddfd@#23
 
 ### Connect Windows Power Shell to Linux Jupyter
@@ -48,6 +48,17 @@ Example
 
 ### Open Jupyter Notebook on your browser
 http://localhost:8888/?token=tokeyGivenByLinuxServer  
+
+### This will the code 
+*** Import libraries ***
+************************
+%matplotlib inline  
+import numpy as np  
+import matplotlib.pyplot as plt  
+import pandas as pd  
+import matplotlib.dates as mdates  
+from matplotlib.dates import DateFormatter  
+from datetime import date  
 
 
 
