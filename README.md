@@ -60,6 +60,47 @@ http://localhost:8888/?token=tokeyGivenByLinuxServer
 `from matplotlib.dates import DateFormatter`  
 `from datetime import date`  
 
+***Import log ping file***  
+Make sure head is: date time size bytes from ip icmp ttl rtt ms
+`pings = pd.read_csv("ping-log-file-name", sep=' ', engine='python')`  
 
+***Formating datetime and rtt time***
+`pings['DateTime'] = pings.date + ' ' + pings.time.str.rstrip(":")`  
+`pings.DateTime = pings.DateTime.astype('datetime64[ns]')`  
+`pings.rtt = pings.rtt.str.strip("time=")`  
+`pings.rtt = pings.rtt.fillna(2000)`  
+`pings.rtt = pings.rtt.astype('float')`  
+
+***New df that only have DateTime and rtt***
+`pings_v2 = pings[['DateTime', 'rtt']].copy()`  
+`pings_v2 = pings_v2.set_index(pings_v2.DateTime)`  
+
+***Getting samples every 5 minutes***
+`pings5min = pings_v2.resample('5T').mean()`  
+
+***To zoom-in unccomment the next line***
+`#pings5min = pings5min.loc['2021-05-30 17:00:00':'2021-05-30 19:00:00']`  
+
+***Re numerate index 0, 1, 2, ...***
+`pings5min = pings5min.reset_index(drop=False)`  
+
+***Create figure and plot space***
+`fig, ax = plt.subplots(figsize=(15, 5))`  
+
+***Add x-axis and y-axis***
+`ax.plot(pings5min.DateTime, pings5min.rtt, label='8.8.8.8')`  
+`plt.title('Pings - 5/30/21', fontdict={'fontsize': 20})`  
+`plt.xlabel('HH:MM')`  
+`plt.ylabel('ms')`  
+
+***Define the date format***
+`date_form = DateFormatter('%H:%M')`  
+`ax.xaxis.set_major_formatter(date_form)`  
+`plt.legend()`  
+
+***To save graph. Uncomment the next line***
+`#plt.savefig('SouthClayton', dpi=300)`  
+
+`plt.show()`
 
 
