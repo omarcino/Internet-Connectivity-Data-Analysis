@@ -49,9 +49,8 @@ Example
 ### Open Jupyter Notebook on your browser
 http://localhost:8888/?token=tokeyGivenByLinuxServer  
 
-### This will the code 
-*** Import libraries ***
-************************
+### This will be the code 
+***Import libraries***  
 %matplotlib inline  
 import numpy as np  
 import matplotlib.pyplot as plt  
