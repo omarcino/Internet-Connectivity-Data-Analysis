@@ -39,8 +39,16 @@ Example
 `$ tail 2021-05-31.ipv4-8.8.8.8`
 
 ### Start Jupiter Notebook on Linux
-`(venv)$ jupyter notebook --no-browser --port=8888 --allow-root`
+`(venv)$ jupyter notebook --no-browser --port=8888 --allow-root`  // You will receive a token value  
+> Example
+> http://localhost:8888/?token=dfddfd@#23
 
 ### Connect Windows Power Shell to Linux Jupyter
-`ssh -N -f -L localhost:8888:localhost:8888 root@192.168.0.2`  
+`ssh -N -f -L localhost:8888:localhost:8888 linux-user00@linux-ip-address`
+
+### Open Jupyter Notebook on your browser
+http://localhost:8888/?token=tokeyGivenByLinuxServer  
+
+
+
 
