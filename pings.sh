@@ -29,8 +29,8 @@ time=$(date '+%H:%M:%S')
 #
 if [ $seq ]
 then
- #file header is: SEQ DATE RTT
- echo "$seq $day $time $rtt" >> $directory/$host.$day.txt
+ #file header is: SEQ, DATE, RTT
+ echo "$seq, $day $time, $rtt" >> $directory/$host.$day.txt
 fi
 done
 
