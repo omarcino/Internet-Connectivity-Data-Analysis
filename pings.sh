@@ -17,10 +17,10 @@ directory="/home/pi/pings/"
 ping 8.8.8.8 | while read value;
 do
 # Round Trip Time
-rtt=$(echo $value | grep -o time=.* | grep -o '[0-9]..[0-9].')
+rtt=$(echo $value | egrep -o time=.* | egrep -o '[0-9]+.[0-9]+')
 #
 # Sequence
-seq=$(echo $value | grep -o 'seq=[0-9].' | grep -o '[0-9].')
+seq=$(echo $value | egrep -o 'seq=[0-9].' | egrep -o '[0-9]+')
 #
 # Day and Time
 day=$(date '+%Y-%m-%d')
