@@ -20,7 +20,7 @@ do
 rtt=$(echo $value | egrep -o time=.* | egrep -o '[0-9]+.[0-9]+')
 #
 # Sequence
-seq=$(echo $value | egrep -o 'seq=[0-9].' | egrep -o '[0-9]+')
+seq=$(echo $value | egrep -o 'seq=[0-9]+' | egrep -o '[0-9]+')
 #
 # Day and Time
 day=$(date '+%Y-%m-%d')
