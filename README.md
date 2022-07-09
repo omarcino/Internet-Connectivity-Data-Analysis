@@ -13,17 +13,16 @@ SpeedTest script and Crontab Tasks
 
 ## Pinging a Host in the Internet Every Second 24/7
 
-### Download the Linux Ping Bash Script
+Download pings.sh utility and make it executable
 
-[Linux Ping Bash Script Utility](https://github.com/omarcino/pings-data-analysis/blob/main/pings.sh)
+    $ wget https://github.com/omarcino/pings-data-analysis/blob/main/pings.sh
+    $ chmod a+x pings.sh
 
-### Create a Contrab Task in Linux"
+Create a Contrab Task to execute the script after a reboot
 
     # Wait 60 seconds before executing the ping script
     # The ping script can have anyname
-    @reboot /bin/sleep 60 && /home/pi/pings/script/pings-data-analysis/pings.sh
-
-
+    @reboot /bin/sleep 60 && /path-to-ping-script/pings.sh
 
 
 ### Intall python3-venv
