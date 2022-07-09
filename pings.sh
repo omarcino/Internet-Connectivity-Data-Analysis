@@ -14,7 +14,7 @@ host="8.8.8.8"
 directory="/home/pi/pings/"
 #
 # Execute ping every second (Script Heart)
-ping 8.8.8.8 | while read value;
+ping $host | while read value;
 do
 # Round Trip Time
 rtt=$(echo $value | egrep -o time=.* | egrep -o '[0-9]+.[0-9]+')
