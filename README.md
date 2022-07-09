@@ -15,7 +15,7 @@ SpeedTest script and Crontab Tasks
 
 ### Download the Linux Ping Bash Script
 
-    [Linux Ping Bash Script Utility](https://github.com/omarcino/pings-data-analysis/blob/main/pings.sh)
+[Linux Ping Bash Script Utility](https://github.com/omarcino/pings-data-analysis/blob/main/pings.sh)
 
 ### Create a Contrab Task in Linux"
 
