@@ -1,9 +1,9 @@
 # Internet Connectivity Data Analysis
-## Main idea
+## Main Idea
 
 We'll analyze the Internet Quality by pinging a host in the Internet
-every second 24/7. And also, we'll test the Internet Speed in a
-defined timely manner by using Ookla Speed Test
+every second 24/7. And also, we'll test the Internet Speed by
+using Ookla Speed Test
 
 ## Tools
 
@@ -11,9 +11,13 @@ Linux bash scripting, Python, Pandas, Jupyter Notebook,
 SpeedTest script and Crontab Tasks
 
 
-## Pinging a host in the Internet everysecond 24/7
+## Pinging a Host in the Internet Every Second 24/7
 
-### Create a Contrab task in linux"
+### Download the Linux Ping Bash Script
+
+    [Linux Ping Bash Script Utility](https://github.com/omarcino/pings-data-analysis/blob/main/pings.sh)
+
+### Create a Contrab Task in Linux"
 
     # Wait 60 seconds before executing the ping script
     # The ping script can have anyname
