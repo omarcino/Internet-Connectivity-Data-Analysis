@@ -1,16 +1,18 @@
 #!/bin/bash
 # By omardata.com
-# 2022-04-16
+# 2022-04-16 - v10.0
+# 2022-07-09 - v10.1 Host IP Address into a $host variable
 #-----------------------------------
 # Check Internet connection every second
 # Add the following line to contrab
 #
 #@reboot /bin/sleep 60 && /home/pi/pings/ping_file_name.sh
 #-----------------------------------
-# IPv4 host
+# IPv4 host Ex. 8.8.8.8
 host="8.8.8.8"
 #
 # Directory path where data will be saved
+# Ex. Raspberry pi
 directory="/home/pi/pings/"
 #
 # Execute ping every second (Script Heart)

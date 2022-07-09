@@ -18,6 +18,18 @@ Download pings.sh utility and make it executable
     $ wget https://github.com/omarcino/pings-data-analysis/blob/main/pings.sh
     $ chmod a+x pings.sh
 
+Define to wich host you want to ping
+and directory path where data will be saved
+
+    $ nano pings.sh
+    
+    # IPv4 host Ex. 8.8.8.8
+    host="8.8.8.8"
+    #
+    # Directory path where data will be saved
+    # Ex. Raspberry pi
+    directory="/home/pi/pings/"
+
 Create a Contrab Task to execute the script after a reboot
 
     # Wait 60 seconds before executing the ping script
