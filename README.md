@@ -1,6 +1,26 @@
 # Internet Connectivity Data Analysis
-## Linux, Python, Pandas and Jupyter
-When looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
+## Main idea
+
+We'll analyze the Internet Quality by pinging a host in the Internet
+every second 24/7. And also, we'll test the Internet Speed in a
+defined timely manner by using Ookla Speed Test
+
+## Tools
+
+Linux bash scripting, Python, Pandas, Jupyter Notebook,
+SpeedTest script and Crontab Tasks
+
+
+## Pinging a host in the Internet everysecond 24/7
+
+### Create a Contrab task in linux"
+
+    # Wait 60 seconds before executing the ping script
+    # The ping script can have anyname
+    @reboot /bin/sleep 60 && /home/pi/pings/script/pings-data-analysis/pings.sh
+
+
+
 
 ### Intall python3-venv
 `$ sudo apt-get install python3-venv`	// On Ubuntu  
