@@ -54,7 +54,8 @@ Download and Install speed-test cli
     armv7l
     # armv3 to v7 is a 32 bits OS
     # armv8 or aarch64 is a 64 bits OS
-    # Downloading ARM 32 bits
+    #
+    # Ex. downloading and installing ARM 32 bits
     $ wget https://install.speedtest.net/app/cli/ookla-speedtest-1.1.1-linux-armel.tgz
     $ tar -xvf ookla-speedtest-1.1.1-linux-armel.tgz
     # Execute SpeedTest for the first time and accept license
