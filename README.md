@@ -3,7 +3,7 @@
 
 We'll analyze the Internet Quality by pinging a host in the Internet
 every second 24/7. And also, we'll test the Internet Speed by
-using Ookla Speed Test
+using Ookla Speed Test utility.
 
 ## Tools
 
@@ -19,7 +19,7 @@ Download pings.sh utility and make it executable
     $ chmod a+x pings.sh
 
 Define to wich host you want to ping
-and directory path where data will be saved
+and the directory path where data will be saved
 
     $ nano pings.sh
     
@@ -30,11 +30,39 @@ and directory path where data will be saved
     # Ex. Raspberry pi
     directory="/home/pi/pings/"
 
-Create a Contrab Task to execute the script after a reboot
+Add a Contrab Task to execute the script after a reboot
 
+    $ crontab -e
+    
     # Wait 60 seconds before executing the ping script
     # The ping script can have anyname
     @reboot /bin/sleep 60 && /path-to-ping-script/pings.sh
+
+## Test Internet Speed with Ookla utility
+
+Download and Install speed-test cli
+
+    # Make sure to upgrade your system
+    # Ex. Ubuntu, Debian and Raspberry pi
+    $ sudo apt-get update
+    $ sudo apt-get upgrade
+    $ sudo reboot
+    #
+    # Find out the CPU arquitecture
+    $ name -m
+    # Ex. Output Rapberry pi
+    armv7l
+    # armv3 to v7 is a 32 bits OS
+    # armv8 or aarch64 is a 64 bits OS
+    # Downloading ARM 32 bits
+    $ wget https://install.speedtest.net/app/cli/ookla-speedtest-1.1.1-linux-armel.tgz
+    $ tar -xvf ookla-speedtest-1.1.1-linux-armel.tgz
+    # Execute SpeedTest for the first time and accept license
+    ./speedtest
+    Do you accept the license? [type YES to accept]: yes
+    License acceptance recorded. Continuing.
+
+
 
 
 ### Intall python3-venv
