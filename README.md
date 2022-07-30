@@ -50,7 +50,7 @@ Upgrade your system
  
  Find out the CPU arquitecture
  
-    name -m
+    uname -m
     # Ex. Output Rapberry pi
     # armv7l
     # armv3 to v7 is a 32 bits OS
