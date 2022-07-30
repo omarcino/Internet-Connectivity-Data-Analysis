@@ -78,6 +78,7 @@ Download speedtest.sh custom utility, make it executable and edit it
     nano speedtest.sh
 
 Define the directory path where data will be saved
+
     # speed test path
     directory="/some-path/"
 
