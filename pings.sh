@@ -23,7 +23,7 @@ do
 # Day and Time
 day=$(date '+%Y-%m-%d')
 time=$(date '+%H:%M:%S')
-echo "$day $time: $value" >> $directory/$day.$host.txt
+echo "$day $time: $value" >> $directory/$day\_$host.txt
 ### If you want to reduce file size
 ### Comment the last line and uncomment the lines below
 ### You will only have RTT and SEQ values
