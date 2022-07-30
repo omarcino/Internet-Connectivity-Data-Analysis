@@ -143,7 +143,7 @@ according your criteria
     
     http://localhost:8888/?token=tokeyGivenByLinuxServer  
 
-### This will be the code 
+### Pings Graph on Pandas and Jupiter Notebook
     ### Import libraries ###
     %matplotlib inline
     import numpy as np
