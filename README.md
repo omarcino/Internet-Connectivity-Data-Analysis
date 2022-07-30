@@ -13,15 +13,14 @@ SpeedTest script and Crontab Tasks
 
 ## Pinging a Host in the Internet Every Second 24/7
 
-Download pings.sh utility and make it executable
+Download pings.sh utility, make it executable and edit it
 
-    $ wget https://github.com/omarcino/pings-data-analysis/blob/main/pings.sh
-    $ chmod a+x pings.sh
+    wget https://raw.githubusercontent.com/omarcino/pings-data-analysis/main/pings.sh
+    chmod a+x pings.sh
+    nano pings.sh
 
 Define to wich host you want to ping
 and the directory path where data will be saved
-
-    $ nano pings.sh
     
     # IPv4 host Ex. 8.8.8.8
     host="8.8.8.8"
@@ -30,61 +29,63 @@ and the directory path where data will be saved
     # Ex. Raspberry pi
     directory="/home/pi/pings/"
 
-Add a Contrab Task to execute the script after a reboot
+Add a Contrab Task 
 
-    $ crontab -e
+    crontab -e
     
+Execute the script after a reboot
+
     # Wait 60 seconds before executing the ping script
     # The ping script can have anyname
     @reboot /bin/sleep 60 && /path-to-ping-script/pings.sh
 
 ## Test Internet Speed with Ookla utility
 
-Download and Install Ookla speed-test cli
+Upgrade your system
 
-    # Make sure to upgrade your system
     # Ex. Ubuntu, Debian and Raspberry pi
-    $ sudo apt-get update
-    $ sudo apt-get upgrade
-    $ sudo reboot
-    #
-    # Find out the CPU arquitecture
-    $ name -m
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo reboot
+ 
+ Find out the CPU arquitecture
+ 
+    name -m
     # Ex. Output Rapberry pi
-    armv7l
+    # armv7l
     # armv3 to v7 is a 32 bits OS
     # armv8 or aarch64 is a 64 bits OS
-    #
-    # Ex. downloading and installing ARM 32 bits
-    $ wget https://install.speedtest.net/app/cli/ookla-speedtest-1.1.1-linux-armel.tgz
-    $ tar -xvf ookla-speedtest-1.1.1-linux-armel.tgz
+    
+Ex. downloading and installing ARM 32 bits
+
+    wget https://install.speedtest.net/app/cli/ookla-speedtest-1.1.1-linux-armel.tgz
+    tar -xvf ookla-speedtest-1.1.1-linux-armel.tgz
     # Execute SpeedTest for the first time and accept license
     ./speedtest
-    Do you accept the license? [type YES to accept]: yes
-    License acceptance recorded. Continuing.
+    # Do you accept the license? [type YES to accept]: yes
+    # License acceptance recorded. Continuing.
 
 Make sure the csv header is as:
 
-    pi@raspberrypi:~/SpeedTest $ ./speedtest --format=csv --output-header
-    "server name","server id","latency","jitter","packet loss","download","upload","download bytes","upload bytes","share url","download server count"
-    "Nitel - Atlanta, GA","12189","10.325","0.506","0","11010840","2204719","79219728","13533156","https://www.speedtest.net/result/c/ce874d05-16a2-4c0b-8d55-76027f127cf2","1"
+    ./speedtest --format=csv --output-header
+    # "server name","server id","latency","jitter","packet loss","download","upload","download bytes","upload bytes","share url","download server count"
+    # "Nitel - Atlanta, GA","12189","10.325","0.506","0","11010840","2204719","79219728","13533156","https://www.speedtest.net/result/c/ce874d05-16a2-4c0b-8d55-76027f127cf2","1"
 
-Download speedtest.sh custom utility and make it executable
+Download speedtest.sh custom utility, make it executable and edit it
 
-    $ wget https://github.com/omarcino/pings-data-analysis/blob/main/speedtest.sh
-    $ chmod a+x speedtest.sh
+    wget https://raw.githubusercontent.com/omarcino/pings-data-analysis/main/speedtest.sh
+    chmod a+x speedtest.sh
+    nano speedtest.sh
 
 Define the directory path where data will be saved
-
-    $ nano speedtest.sh
-    
     # speed test path
-    directory="/home/pi/SpeedTest/"
+    directory="/some-path/"
 
-Add Contrab Tasks to execute the speedtest script
-according your criteria
+Add Contrab Tasks
     
-    $ crontab -e
+    crontab -e
+
+execute the speedtest script according your criteria
 
     # Some examples
     #
