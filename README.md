@@ -40,7 +40,7 @@ Add a Contrab Task to execute the script after a reboot
 
 ## Test Internet Speed with Ookla utility
 
-Download and Install speed-test cli
+Download and Install Ookla speed-test cli
 
     # Make sure to upgrade your system
     # Ex. Ubuntu, Debian and Raspberry pi
@@ -63,8 +63,44 @@ Download and Install speed-test cli
     Do you accept the license? [type YES to accept]: yes
     License acceptance recorded. Continuing.
 
+Make sure the csv header is as:
+    pi@raspberrypi:~/SpeedTest $ ./speedtest --format=csv --output-header
+    "server name","server id","latency","jitter","packet loss","download","upload","download bytes","upload bytes","share url","download server count"
+    "Nitel - Atlanta, GA","12189","10.325","0.506","0","11010840","2204719","79219728","13533156","https://www.speedtest.net/result/c/ce874d05-16a2-4c0b-8d55-76027f127cf2","1"
 
+Download speedtest.sh custom utility and make it executable
 
+    $ wget https://github.com/omarcino/pings-data-analysis/blob/main/speedtest.sh
+    $ chmod a+x speedtest.sh
+
+Define the directory path where data will be saved
+
+    $ nano speedtest.sh
+    
+    # speed test path
+    directory="/home/pi/SpeedTest/"
+
+Add Contrab Tasks to execute the speedtest script
+according your criteria
+    
+    $ crontab -e
+
+    # Some examples
+    #
+    # At every 15th minutes
+    */15 * * * * /path-to-speedtest-script/speedtest.sh
+    #
+    # At every 15th minutes from 00:00 to 06:00
+    */15 0-6 * * * /path-to-speedtest-script/speedtest.sh
+    #
+    # Ookla speedtest utility takes around 15 seconds
+    # A heavy test every minute
+    * * * * * /path-to-speedtest-script/speedtest.sh
+    #
+    # A heavy test every two minutes
+    */2 * * * * /path-to-speedtest-script/speedtest.sh
+
+## Setting Pandas and Jupiter notebook environment
 
 ### Intall python3-venv
 `$ sudo apt-get install python3-venv`	// On Ubuntu  
@@ -81,27 +117,6 @@ Download and Install speed-test cli
 `(venv)$ pip install pandas`  
 `(venv)$ pip install jupyter`  
 `(venv)$ pip install matplotlib`  
-
-### Download Code
-`$ wget https://raw.githubusercontent.com/omarcino/pings-data-analysis/main/pingv4.sh`
-
-### Make scripting executable
-`$ chmod a+x pingv4.sh`
-
-### Edit file
-> Example
->
-> host="8.8.8.8"  
-> directory="/root/pings"
-
-### Schedule the code to run everytime linux stars
-`$ crontab -e`  
-> Example OpenSuse Leap 15.1  and Ubuntu 20.04.1 LTS  
-> @reboot /pathdirectory/pingv4.sh
-
-### Verify the script is working
-Example  
-`$ tail 2021-05-31.ipv4-8.8.8.8`
 
 ### Start Jupiter Notebook on Linux
 `(venv)$ jupyter notebook --no-browser --port=8888 --allow-root`  // You will receive a token value  

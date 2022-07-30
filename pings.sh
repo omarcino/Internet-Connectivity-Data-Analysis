@@ -1,7 +1,8 @@
 #!/bin/bash
 # By omardata.com
-# 2022-04-16 - v10.0
+# 2022-07-23 - Bug fixed: No records when lost connections
 # 2022-07-09 - v10.1 Host IP Address into a $host variable
+# 2022-04-16 - v10.0
 #-----------------------------------
 # Check Internet connection every second
 # Add the following line to contrab
@@ -16,24 +17,31 @@ host="8.8.8.8"
 directory="/home/pi/pings/"
 #
 # Execute ping every second (Script Heart)
-ping $host | while read value;
+# -O option will keep showing failure results for logging
+ping -O $host | while read value;
 do
-# Round Trip Time
-rtt=$(echo $value | egrep -o time=.* | egrep -o '[0-9]+.[0-9]+')
-#
-# Sequence
-seq=$(echo $value | egrep -o 'seq=[0-9]+' | egrep -o '[0-9]+')
-#
 # Day and Time
 day=$(date '+%Y-%m-%d')
 time=$(date '+%H:%M:%S')
+echo "$day $time: $value" >> $directory/$day.$host.txt
+### If you want to reduce file size
+### Comment the last line and uncomment the lines below
+### You will only have RTT and SEQ values
+### This option is good to reduce file size, but
+### It is not good for debugging
+## Round Trip Time
+#rtt=$(echo $value | egrep -o time=.* | egrep -o '[0-9]+.[0-9]+')
+##
+## Sequence
+#seq=$(echo $value | egrep -o 'seq=[0-9]+' | egrep -o '[0-9]+')
+##
 #
 #
-if [ $seq ]
-then
- #file header is: SEQ, DATE, RTT
- echo "$seq, $day $time, $rtt" >> $directory/$host.$day.txt
-fi
+#if [ $seq ]
+#then
+# #file header is: SEQ, DATE, RTT
+# echo "$seq, $day $time, $rtt" >> $directory/$host.$day.txt
+#fi
 done
 
 
