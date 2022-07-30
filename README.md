@@ -64,6 +64,7 @@ Download and Install Ookla speed-test cli
     License acceptance recorded. Continuing.
 
 Make sure the csv header is as:
+
     pi@raspberrypi:~/SpeedTest $ ./speedtest --format=csv --output-header
     "server name","server id","latency","jitter","packet loss","download","upload","download bytes","upload bytes","share url","download server count"
     "Nitel - Atlanta, GA","12189","10.325","0.506","0","11010840","2204719","79219728","13533156","https://www.speedtest.net/result/c/ce874d05-16a2-4c0b-8d55-76027f127cf2","1"
