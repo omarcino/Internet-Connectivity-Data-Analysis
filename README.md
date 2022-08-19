@@ -15,7 +15,7 @@ SpeedTest script and Crontab Tasks
 
 Download pings.sh utility, make it executable and edit it
 
-    wget https://raw.githubusercontent.com/omarcino/pings-data-analysis/main/pings.sh
+    wget https://raw.githubusercontent.com/omarcino/Internet-Connectivity-Data-Analysis/main/pings.sh
     chmod a+x pings.sh
     nano pings.sh
 
@@ -73,7 +73,7 @@ Make sure the csv header is as:
 
 Download speedtest.sh custom utility, make it executable and edit it
 
-    wget https://raw.githubusercontent.com/omarcino/pings-data-analysis/main/speedtest.sh
+    wget https://raw.githubusercontent.com/omarcino/Internet-Connectivity-Data-Analysis/main/speedtest.sh
     chmod a+x speedtest.sh
     nano speedtest.sh
 
@@ -103,18 +103,6 @@ execute the speedtest script according your criteria
     # A heavy test every two minutes
     */2 * * * * /path-to-speedtest-script/speedtest.sh
 
-## Analyze Data with Python, Pandas and Jupiter Notebook
-
-### Install Anacondas on your system
-
-A list of good resources will be provied in this section
-to install Anacondas
-
-- First link coming soon
-- Second link coming soon
-- n link coming soon
-
-###
 
 ## Setting Pandas and Jupiter notebook environment
 
@@ -157,6 +145,16 @@ to install Anacondas
 ### Open Jupyter Notebook on your browser
     
     http://localhost:8888/?token=tokeyGivenByLinuxServer  
+
+### Using pings.ipynb and speedtest.ipynb
+
+Download files
+
+    wget https://raw.githubusercontent.com/omarcino/Internet-Connectivity-Data-Analysis/main/pings.ipynb
+    wget https://raw.githubusercontent.com/omarcino/Internet-Connectivity-Data-Analysis/main/speedtest.ipynb 
+
+Upload files to Pandas and Jupyter notebook system
+
 
 ### Pings Graph on Pandas and Jupiter Notebook
     ### Import libraries ###
