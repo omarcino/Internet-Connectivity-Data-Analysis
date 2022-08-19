@@ -103,6 +103,19 @@ execute the speedtest script according your criteria
     # A heavy test every two minutes
     */2 * * * * /path-to-speedtest-script/speedtest.sh
 
+## Analyze Data with Python, Pandas and Jupiter Notebook
+
+### Install Anacondas on your system
+
+A list of good resources will be provied in this section
+to install Anacondas
+
+- First link coming soon
+- Second link coming soon
+- n link coming soon
+
+###
+
 ## Setting Pandas and Jupiter notebook environment
 
 ### Intall python3-venv
