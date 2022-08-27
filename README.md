@@ -65,6 +65,18 @@ Ex. downloading and installing ARM 32 bits
     # Do you accept the license? [type YES to accept]: yes
     # License acceptance recorded. Continuing.
 
+Ex. downloading and installing on OpenSuse
+    
+    wget https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-x86_64.tgz
+    wget https://curl.se/ca/cacert.pem
+    tar -xvf ookla-speedtest-1.2.0-linux-x86_64.tgz
+    ./speedtest --ca-certificate=./cacert.pem
+    # Do you accept the license? [type YES to accept]: yes
+    # License acceptance recorded. Continuing.
+    # Then you will have to add at the end of the ./speedtest command the line: --ca-certificate=./cacert.pem
+
+
+
 Make sure the csv header is as:
 
     ./speedtest --format=csv --output-header
