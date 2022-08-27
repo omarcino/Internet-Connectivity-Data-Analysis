@@ -130,21 +130,23 @@ execute the speedtest script according your criteria
 
 ### Start Jupiter Notebook on Linux
     
-    (venv)$ jupyter notebook --no-browser --port=8888 --allow-root
+    jupyter notebook --no-browser --port=8888 --allow-root
     # You will receive a token value like
     # http://localhost:8888/?token=dfddfd@#23
 
 ### Connect Windows Power Shell to Linux Jupyter
     
-    # First option
+First option
+
     ssh -N -f -L localhost:8888:localhost:8888 user@linux-ip-address
-    #
-    # Second Option
+
+Second Option
+
     ssh -i .\someKey.pem -N -f -L localhost:8888:localhost:8888 user@linux-ip-address
 
 ### Open Jupyter Notebook on your browser
     
-    http://localhost:8888/?token=tokeyGivenByLinuxServer  
+    http://localhost:8888/  
 
 ### Using pings.ipynb and speedtest.ipynb
 
@@ -153,89 +155,4 @@ Download files
     wget https://raw.githubusercontent.com/omarcino/Internet-Connectivity-Data-Analysis/main/pings.ipynb
     wget https://raw.githubusercontent.com/omarcino/Internet-Connectivity-Data-Analysis/main/speedtest.ipynb 
 
-Upload files to Pandas and Jupyter notebook system
-
-
-### Pings Graph on Pandas and Jupiter Notebook
-    ### Import libraries ###
-    %matplotlib inline
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import pandas as pd
-    import matplotlib.dates as mdates
-    from matplotlib.dates import DateFormatter
-    from datetime import date, datetime
-    #
-    # select the original file 
-    file_name = '2022-07-29.ipv4-8.8.8.8'
-    #
-    # Defining the custom header
-    header = 'date time size bytes from ip icmp ttl rtt ms\n'
-    #
-    # day name
-    day_name = datetime.strptime(file_name[0:10], "%Y-%m-%d").strftime("%A")
-    #
-    # Threshold
-    threshold = 55
-    #
-    # Delete first line and add header
-    with open(file_name, 'r+') as fp:
-        # read an store all lines into list
-        lines = fp.readlines()
-        # delete first element from list
-        lines.pop(0)
-        # add header to list
-        lines.insert(0, header)
-        # move file pointer to the beginning of a file
-        fp.seek(0)
-        # truncate the file
-        fp.truncate()
-        # start writing lines
-        fp.writelines(lines)
-    #   
-    ### Import log ping file ###
-    # Make sure head is: date time size bytes from ip icmp ttl rtt ms
-    pings = pd.read_csv(file_name, sep=' ', engine='python')
-    #
-    ### Formating datetime and rtt time ###
-    pings['DateTime'] = pings.date + ' ' + pings.time.str.rstrip(":")
-    pings.DateTime = pings.DateTime.astype('datetime64[ns]')
-    pings.rtt = pings.rtt.str.strip("time=")
-    #
-    # Considering 2000 [ms] as lost packet
-    pings.rtt = pings.rtt.fillna(2000)
-    pings.rtt = pings.rtt.astype('float')
-    #
-    ### New df that only have DateTime and rtt ###
-    pings_v2 = pings[['DateTime', 'rtt']].copy()
-    pings_v2 = pings_v2.set_index(pings_v2.DateTime)
-    #
-    ### Getting samples every 5 ### minutes
-    pings5min = pings_v2.resample('5T').mean()
-    #
-    ### To zoom-in unccomment the next line ###
-    #pings5min = pings5min.loc['2022-02-02 04:30:00':'2022-02-02 05:00:00']
-    #
-    ### Re numerate index 0, 1, 2, ... ###
-    pings5min = pings5min.reset_index(drop=False)
-    #
-    ### Create figure and plot ### space
-    fig, ax = plt.subplots(figsize=(15, 5))
-    #
-    ### Add x-axis and y-axis ###
-    ax.plot(pings5min.DateTime, pings5min.rtt, label=day_name)
-    plt.title(file_name, fontdict={'fontsize': 20})
-    plt.xlabel('HH:MM')
-    plt.ylabel('RTT ms')
-    #
-    ### Define the date format ###
-    date_form = DateFormatter('%H:%M')
-    ax.xaxis.set_major_formatter(date_form)
-    plt.legend()
-    #
-    ### Get the graph ###
-    plt.axhline(y=threshold, color='r', linestyle='-')
-    plt.savefig(file_name + ".png", dpi=300)
-    plt.show()
-
-
+### Upload files to Pandas and Jupyter notebook system
