@@ -13,5 +13,5 @@ day=$(date '+%Y-%m-%d')
 time=$(date '+%H:%M:%S')
 #
 # Save data
-echo \"$day $time\", $speedtest  >> $directory/speedtest.csv
+echo \"$day $time\",$speedtest  >> $directory/speedtest.csv
 

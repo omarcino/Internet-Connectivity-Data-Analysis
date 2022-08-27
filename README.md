@@ -130,21 +130,23 @@ execute the speedtest script according your criteria
 
 ### Start Jupiter Notebook on Linux
     
-    (venv)$ jupyter notebook --no-browser --port=8888 --allow-root
+    jupyter notebook --no-browser --port=8888 --allow-root
     # You will receive a token value like
     # http://localhost:8888/?token=dfddfd@#23
 
 ### Connect Windows Power Shell to Linux Jupyter
     
-    # First option
+First option
+
     ssh -N -f -L localhost:8888:localhost:8888 user@linux-ip-address
-    #
-    # Second Option
+
+Second Option
+
     ssh -i .\someKey.pem -N -f -L localhost:8888:localhost:8888 user@linux-ip-address
 
 ### Open Jupyter Notebook on your browser
     
-    http://localhost:8888/?token=tokeyGivenByLinuxServer  
+    http://localhost:8888/  
 
 ### Using pings.ipynb and speedtest.ipynb
 
